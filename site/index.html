@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Análise de Dados Abertos · CREA-BA</title>
+<meta name="description" content="Análise independente dos dados abertos do Portal da Transparência do CREA-BA: custos de conselheiros, diárias, passagens, origens e destinos.">
+<link rel="icon" href="assets/logo-quadrado.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap">
+<link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="#/" aria-label="Início"><img src="assets/logo-cabecalho.png" alt="CREA-BA · Conselho Regional de Engenharia e Agronomia da Bahia"></a>
+    <div class="titulo">
+      <strong>Análise de Dados Abertos</strong>
+      <span>Portal da Transparência do CREA-BA</span>
+    </div>
+  </div>
+</header>
+
+<!-- Nível 1: módulos (um por API/tema). Para acrescentar um, veja js/portal.js e README -->
+<nav class="mods" id="mods" aria-label="Módulos"></nav>
+<!-- Nível 2: abas do módulo ativo -->
+<nav class="abas" id="abas" aria-label="Abas"></nav>
+
+<main class="wrap">
+  <section id="filtros"></section>
+  <section id="conteudo" aria-live="polite"></section>
+</main>
+
+<footer class="rodape">
+  <div class="rodape-in">
+    <img src="assets/logo-cor.jpg" alt="CREA-BA" class="rodape-logo">
+    <div>
+      <p><strong>Iniciativa independente de análise de dados públicos.</strong> Este não é um canal oficial do CREA-BA e não representa a posição do Conselho.
+      Os números vêm da API pública do Portal da Transparência (<a href="https://crea-ba.implanta.net.br/transparencia/api/dadosabertos" target="_blank" rel="noopener">crea-ba.implanta.net.br</a>, Implanta Informática),
+      processados automaticamente; classificações de evento, colegiado e distância são estimativas (ver aba Metodologia).</p>
+      <p>Site oficial: <a href="https://www.creaba.org.br" target="_blank" rel="noopener">www.creaba.org.br</a> · <span id="atualizado"></span></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/portal.js"></script>
+<!-- Dados e módulos. Cada módulo novo = 1 arquivo em data/ + 1 em js/modulos/ + 2 linhas aqui -->
+<script src="data/conselheiros.js"></script>
+<script src="js/modulos/conselheiros.js"></script>
+<script>Portal.iniciar();</script>
+</body>
+</html>
